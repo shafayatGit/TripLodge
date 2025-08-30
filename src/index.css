@@ -1,13 +1,18 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Outfit&family=Playfair:ital,opsz,wght@0,5..1200,300..900");
-
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
 @theme {
   --color-primary: #2563eb;
   --color-secondary: #fbbf24;
 }
-* {
-  font-family: Outfit;
-}
 .play {
-  font-family: "Playfair", serif !important;
+  font-family: "Playfair", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
