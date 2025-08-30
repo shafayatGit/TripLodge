@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
+import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
 // import assets from "../../assets/assets.js"
 
 const Navbar = () => {
@@ -11,10 +12,11 @@ const Navbar = () => {
     { name: "About", path: "/" },
   ];
 
-
-
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const { openSignIn } = useClerk();
+  const { user } = useUser();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +41,9 @@ const Navbar = () => {
           alt="logo"
           className={`h-9 ${isScrolled && "invert opacity-80"}`}
         />
-        <span className="font-playfair text-white font-bold text-4xl ">TripLodge</span>
+        <span className="font-playfair text-white font-bold text-4xl ">
+          TripLodge
+        </span>
       </Link>
 
       {/* Desktop Nav */}
@@ -65,7 +69,7 @@ const Navbar = () => {
             isScrolled ? "text-black" : "text-white"
           } transition-all`}
         >
-         Dashboard
+          Dashboard
         </button>
       </div>
 
@@ -83,13 +87,18 @@ const Navbar = () => {
           <circle cx="11" cy="11" r="8" />
           <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
-        <button
-          className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${
-            isScrolled ? "text-white bg-black" : "bg-white text-black"
-          }`}
-        >
-          Login
-        </button>
+        {user ? (
+          <UserButton></UserButton>
+        ) : (
+          <button
+            onClick={openSignIn}
+            className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${
+              isScrolled ? "text-white bg-black" : "bg-white text-black"
+            }`}
+          >
+            Login
+          </button>
+        )}
       </div>
 
       {/* Mobile Menu Button */}
@@ -136,13 +145,18 @@ const Navbar = () => {
           </a>
         ))}
 
-        <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
-          New Launch
-        </button>
-
-        <button className="bg-black text-white px-8 py-2.5 rounded-full transition-all duration-500">
-          Login
-        </button>
+        {user ? (
+          <UserButton></UserButton>
+        ) : (
+          <button
+            onClick={openSignIn}
+            className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${
+              isScrolled ? "text-white bg-black" : "bg-white text-black"
+            }`}
+          >
+            Login
+          </button>
+        )}
       </div>
     </nav>
   );
