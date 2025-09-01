@@ -51,7 +51,7 @@ const Navbar = () => {
           alt="logo"
           className={`h-9 ${isScrolled && "invert opacity-80"}`}
         />
-        <span className="font-playfair text-white font-bold text-4xl ">
+        <span className="text-indigo-400 font-playfair font-bold text-4xl ">
           TripLodge
         </span>
       </Link>
