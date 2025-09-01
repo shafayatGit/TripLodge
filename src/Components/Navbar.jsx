@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
-import { CiBookmark } from "react-icons/ci";
+import { CiBookmark, CiSearch } from "react-icons/ci";
 
 const Navbar = () => {
   const navLinks = [
@@ -46,12 +46,12 @@ const Navbar = () => {
     >
       {/* Logo */}
       <Link to={"/"} className="cursor-pointer flex items-center gap-2">
-        <img
-          src={"favicon.svg"}
-          alt="logo"
-          className={`h-9 `}
-        />
-        <span className={`${isScrolled && "invert opacity-80"} text-white font-playfair font-bold text-4xl`}>
+        <img src={"favicon.svg"} alt="logo" className={`h-9 `} />
+        <span
+          className={`${
+            isScrolled && "invert opacity-80"
+          } text-white font-playfair font-bold text-4xl`}
+        >
           TripLodge
         </span>
       </Link>
@@ -74,22 +74,6 @@ const Navbar = () => {
             />
           </a>
         ))}
-      </div>
-
-      {/* Desktop Right */}
-      <div className="hidden md:flex items-center gap-4">
-        <svg
-          className={`h-6 w-6 text-white transition-all duration-500 ${
-            isScrolled ? "invert" : ""
-          }`}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="11" cy="11" r="8" />
-          <line x1="21" y1="21" x2="16.65" y2="16.65" />
-        </svg>
         {user && (
           <button
             onClick={() => navigate("/owner")}
@@ -100,6 +84,12 @@ const Navbar = () => {
             Dashboard
           </button>
         )}
+      </div>
+
+      {/* Desktop Right */}
+      <div className="hidden md:flex items-center justify-around gap-4">
+        
+        
       </div>
 
       {/* Mobile Menu Button */}
@@ -115,14 +105,21 @@ const Navbar = () => {
             </UserButton.MenuItems>
           </UserButton>
         ) : (
+          <div className="flex items-center gap-3">
+            <CiSearch
+          className={`h-6 w-6 text-white transition-all duration-500 ${
+            isScrolled ? "invert" : ""
+          }`}
+        />
           <button
             onClick={openSignIn}
-            className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${
+            className={`px-8 py-2.5 rounded-full ml-4 transition-all cursor-pointer duration-500 ${
               isScrolled ? "text-white bg-black" : "bg-white text-black"
             }`}
           >
             Login
           </button>
+          </div>
         )}
         <div className="flex items-center gap-3 md:hidden">
           <svg

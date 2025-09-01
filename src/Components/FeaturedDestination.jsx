@@ -13,7 +13,7 @@ const FeaturedDestination = () => {
         subtitle="Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experience. "
       />
 
-      <div className="flex flex-wrap items-center justify-center gap-6 mt-20 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-8xl mx-auto  items-center justify-center gap-6 mt-20 ">
         {roomsDummyData.slice(0, 4).map((room, index) => (
           <HotelCard key={room._id} room={room} index={index} />
         ))}

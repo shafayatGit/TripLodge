@@ -80,7 +80,7 @@ const Footer = () => {
               className="bg-white rounded-l border border-gray-300 h-9 px-3 outline-none"
               placeholder="Your email"
             />
-            <button className="flex items-center justify-center bg-black h-9 w-9 aspect-square rounded-r">
+            <button className="flex cursor-pointer items-center justify-center bg-black h-9 w-9 aspect-square rounded-r">
               <img
                 src={assets.arrowIcon}
                 alt="arrow-icon"
