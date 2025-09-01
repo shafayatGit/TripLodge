@@ -49,9 +49,9 @@ const Navbar = () => {
         <img
           src={"favicon.svg"}
           alt="logo"
-          className={`h-9 ${isScrolled && "invert opacity-80"}`}
+          className={`h-9 `}
         />
-        <span className="text-indigo-400 font-playfair font-bold text-4xl ">
+        <span className={`${isScrolled && "invert opacity-80"} text-white font-playfair font-bold text-4xl`}>
           TripLodge
         </span>
       </Link>

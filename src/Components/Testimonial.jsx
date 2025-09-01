@@ -11,7 +11,7 @@ const Testimonial = () => {
         "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
       rating: 5,
       review:
-        "I've used many booking platforms before, but none compare to the personalized experience and attention to detail that QuickStay provides.",
+        "I've used many booking platforms before, but none compare to the personalized experience and attention to detail that TripLodge provides.",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const Testimonial = () => {
         "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
       rating: 4,
       review:
-        "QuickStay exceeded my expectations. The booking process was seamless, and the hotels were absolutely top-notch. Highly recommended!",
+        "TripLodge exceeded my expectations. The booking process was seamless, and the hotels were absolutely top-notch. Highly recommended!",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const Testimonial = () => {
         "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200",
       rating: 5,
       review:
-        "Amazing service! I always find the best luxury accommodations through QuickStay. Their recommendations never disappoint!",
+        "Amazing service! I always find the best luxury accommodations through TripLodge. Their recommendations never disappoint!",
     },
   ];
   const CreateCard = ({ card }) => (
@@ -65,12 +65,12 @@ const Testimonial = () => {
         </div>
       </div>
       <p className="text-sm py-4 text-gray-800">
-        Radiant made undercutting all of our competitors an absolute breeze.
+        {card.review}
       </p>
       <div className="flex items-center justify-between text-slate-500 text-xs">
         <div className="flex items-center gap-1">
-          <span>Posted on</span>
-          <a
+         {card.address}
+          {/* <a
             href="https://x.com"
             target="_blank"
             className="hover:text-sky-500"
@@ -87,7 +87,7 @@ const Testimonial = () => {
                 fill="currentColor"
               />
             </svg>
-          </a>
+          </a> */}
         </div>
         <p>{card.date}</p>
       </div>
