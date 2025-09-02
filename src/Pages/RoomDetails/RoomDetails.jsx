@@ -179,9 +179,22 @@ const RoomDetails = () => {
             You get a comfortable Two bedroom apartment has a true city feeling
           </p>
         </div>
-{/* Hosted By */}
-        <div>
-
+        {/* Hosted By */}
+        <div className="">
+          <div className="flex gap-2">
+            <img
+              src="https://i.ibb.co.com/qMQrPdjB/my-photo.jpg"
+              alt="owner-image"
+              className="h-14 w-14 md:h-18 md:w-18 rounded-full"
+            />
+            <div>
+              <p className="text-lg md:text-xl">Hosted by {room.hotel.name}</p>
+              <div className="flex items-center mt-1">
+                <StarRating />
+                <p className="ml-2">200+ reviews</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
