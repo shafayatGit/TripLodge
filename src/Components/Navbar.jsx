@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { assets } from "../../assets/assets";
+// import { assets } from "../../assets/assets";
 import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
 import { CiBookmark, CiSearch } from "react-icons/ci";
 
@@ -86,11 +86,7 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Desktop Right */}
-      <div className="hidden md:flex items-center justify-around gap-4">
-        
-        
-      </div>
+      
 
       {/* Mobile Menu Button */}
       <div className="flex gap-4">
