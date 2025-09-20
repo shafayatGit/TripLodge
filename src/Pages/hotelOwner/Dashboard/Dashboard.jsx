@@ -53,10 +53,10 @@ const Dashboard = () => {
 
       <div className="w-full max-w-3xl text-left border border-gray-300 rounded-lg max-h-80 overflow-y-scroll">
         <table className="w-full">
-          <thead className="bg-gray-50">
-            <tr className="">
+          <thead className="bg-gray-50 ">
+            <tr className=" text-center">
             <th className="px-3 py-3 text-gray-800 font-medium">User Name</th>
-            <th className="px-3 py-3 text-gray-800 font-medium">Room Name</th>
+            <th className="px-3 py-3 text-gray-800 font-medium max-sm:hidden">Room Name</th>
             <th className="px-3 py-3 text-gray-800 font-medium">
               Total Amount{" "}
             </th>
@@ -68,7 +68,7 @@ const Dashboard = () => {
 
           <tbody>
             {dashboardData.bookings.map((item,index)=>(
-                <tr key={index}>
+                <tr key={index} className=" text-center">
                     <td className="py-3 px-4 text-gray-700 border-t border-gray-300">
                         {item.user.username}
                     </td>
